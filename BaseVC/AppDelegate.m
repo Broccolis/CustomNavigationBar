@@ -2,12 +2,10 @@
 //  AppDelegate.m
 //  BaseVC
 //
-//  Created by 助力互联 on 16/8/5.
-//  Copyright © 2016年 助力互联. All rights reserved.
-//
+
 
 #import "AppDelegate.h"
-
+#import "MainController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +15,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
+    
+    MainController *nav = [[MainController alloc]init];
+    self.window.rootViewController = nav;
+    [self.window makeKeyAndVisible];
+    
+    //tabbar 颜色可在DockController.m 中更改
+    //在maincontroller中传入图片和字体选中颜色
+
+    
     return YES;
 }
 
